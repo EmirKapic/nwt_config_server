@@ -1,6 +1,11 @@
 server:
   port: 9000
 
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
 spring:
   application:
     name: auth
@@ -10,10 +15,12 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://postgres:5432/nwt_auth
+    url: ${SPRING_DATASOURCE_URL}
     username: postgres
     password:
     driver-class-name: org.postgresql.Driver
+  config:
+    import: configserver:${CONFIG_SERVER_URL}
 
 jwt:
   header-title: Authorization
