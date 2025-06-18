@@ -1,0 +1,21 @@
+server:
+  port: 9030
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
+spring:
+  application:
+    name: workout-service
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
