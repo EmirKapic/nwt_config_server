@@ -19,8 +19,6 @@ spring:
     username: postgres
     password:
     driver-class-name: org.postgresql.Driver
-  config:
-    import: configserver:${CONFIG_SERVER_URL}
 
 jwt:
   header-title: Authorization
